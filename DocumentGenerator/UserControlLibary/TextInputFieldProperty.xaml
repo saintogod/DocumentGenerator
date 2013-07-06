@@ -1,0 +1,33 @@
+﻿<Window x:Class="UserControlLibary.TextInputFieldProperty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Filed Property Editor" Height="425" Width="300" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" WindowStyle="ToolWindow">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Label Content="Title:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_title" HorizontalAlignment="Left" Height="23" Margin="106,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center"/>
+        <Label Content="Width:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_width" HorizontalAlignment="Left" Height="23" Margin="106,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center" Text="300"/>
+        <Label Content="Height:" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_height" HorizontalAlignment="Left" Height="23" Margin="106,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center" Text="43"/>
+        <Label Content="Left:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_left" HorizontalAlignment="Left" Height="23" Margin="106,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center"/>
+        <Label Content="Top:" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_top" HorizontalAlignment="Left" Height="23" Margin="106,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center"/>
+        <Label Content="Def. Value:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_defaulstring" HorizontalAlignment="Left" Height="23" Margin="106,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center"/>
+        <Label Content="BG Color:" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <xctk:ColorPicker x:Name="cp_backgroundColor" HorizontalAlignment="Left" Height="23" Margin="106,182,0,0" VerticalAlignment="Top" Width="176" VerticalContentAlignment="Center" ShowRecentColors="True" SelectedColor="#00000000"/>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tb_description" HorizontalAlignment="Left" Height="76" Margin="10,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272"/>
+        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" Margin="207,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_cancel_Click"/>
+        <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Left" Margin="117,366,0,0" VerticalAlignment="Top" Width="75" Click="btn_submit_Click"/>
+        <GroupBox Header="Float" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Width="272" Height="43">
+            <StackPanel HorizontalAlignment="Stretch" Height="21" VerticalAlignment="Stretch" Orientation="Horizontal" x:Name="sp_floatTyp">
+                <RadioButton Content="LeftRight" Margin="10,5,0,0" GroupName="FloatType" IsChecked="True" x:Name="rb_leftRight" Unchecked="rb_floatChanged" Checked="rb_floatChanged"/>
+                <RadioButton Content="UpDown"  Margin="10,5,0,0" GroupName="FloatType" x:Name="rb_upDown" Unchecked="rb_floatChanged" Checked="rb_floatChanged"/>
+            </StackPanel>
+        </GroupBox>
+
+    </Grid>
+</Window>

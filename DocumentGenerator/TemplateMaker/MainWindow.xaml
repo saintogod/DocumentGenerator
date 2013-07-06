@@ -1,0 +1,98 @@
+﻿<Window x:Class="TemplateMaker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:uc="clr-namespace:UserControlLibary;assembly=UserControlLibary"
+        Title="MainWindow" Height="750" Width="700" Name="main" MinHeight="600" MinWidth="700" AllowDrop="True" SizeChanged="main_SizeChanged" Closing="main_Closing" LocationChanged="main_LocationChanged">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="23"/>
+        </Grid.RowDefinitions>
+        <Menu x:Name="menu" Grid.Row="0"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <MenuItem x:Name="mi_file" Header="_File" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23">
+                <MenuItem x:Name="mi_file_new" Header="_New" Click="mi_file_new_Click"></MenuItem>
+                <MenuItem x:Name="mi_file_open" Header="_Open" Click="mi_file_open_Click"></MenuItem>
+                <MenuItem x:Name="mi_file_save" Header="_Save"></MenuItem>
+                <MenuItem x:Name="mi_file_saveAs" Header="_SaveAs"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="mi_edit" Header="_Edit" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="23">
+                <MenuItem x:Name="mi_edit_copy" Header="_Copy"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray  Name="tools" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ToolBar VerticalAlignment="Stretch" HorizontalAlignment="Left" HorizontalContentAlignment="Center">
+                <Button Name="btn_eidtor_clear" VerticalAlignment="Center" Content="Clear" Click="btn_eidtor_clear_Click"></Button>
+            </ToolBar>
+            <ToolBar VerticalAlignment="Stretch" HorizontalAlignment="Left" HorizontalContentAlignment="Center">
+                <Button Name="btn_editor_check" VerticalAlignment="Center" Content="Check" Click="btn_editor_check_Click"></Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <Grid x:Name="template" Grid.Row="2" AllowDrop="True"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                MouseLeftButtonDown="TextInput_MouseLeftButtonDown" 
+                MouseLeftButtonUp="TextInput_MouseLeftButtonUp" 
+                MouseMove="TextInput_MouseMove"
+                  >
+
+                <uc:TextInput x:Name="input" 
+                              HorizontalAlignment="Left" VerticalAlignment="Top" 
+                              HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
+                              Margin="10,186,0,0"/>
+                <Button x:Name="btn_clear" Content="Clear" 
+                        HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                        Margin="0,0,20,10" Height="23"
+                        Click="btn_clear_Click" />
+                <Button x:Name="btn_save" Content="Save" 
+                        VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                        Margin="0,0,60,10" Height="23"
+                        Click="btn_save_Click" />
+                <Button x:Name="btn_addNewField" Content="AddNewField" 
+                        VerticalAlignment="Top" HorizontalAlignment="Right" 
+                        Margin="0,60,10,0" Height="23" Click="btn_addNewField_Click"/>
+                <TextBox x:Name="tb_xmlPath" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+                         Margin="75,0,0,10" TextWrapping="Wrap" Width="490" Height="23" 
+                         VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Text="E:\DocumentGenerator\XMLTmpl.xml"/>
+                <Button x:Name="btn_saveXmlPath"  Content="..." 
+                        HorizontalAlignment="Right" Margin="0,0,104,10" VerticalAlignment="Bottom" 
+                        HorizontalContentAlignment="Center" VerticalContentAlignment="Top"
+                        Width="23" Height="23" Padding="0" Click="btn_saveXmlPath_Click"/>
+                <GroupBox Header="Wapper" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="50" Width="200">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" Name="wapperlist">
+                        <RadioButton GroupName="wapper" Content="#" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" IsChecked="True"/>
+                        <RadioButton GroupName="wapper" Content="@" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <RadioButton GroupName="wapper" Content="|" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <RadioButton GroupName="wapper" Content="~" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    </StackPanel >
+                </GroupBox>
+                <GroupBox Header="ContentTemplate" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Height="50" Width="475">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                        <ComboBox x:Name="cb_contentTemplates" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
+                    		Margin="0,0,0,3" Width="385" Height="23" 
+                    		VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+                        <Button x:Name="btn_contentTmplAdd"  Content="..." 
+                        	HorizontalAlignment="Right" Margin="0,2,0,0" VerticalAlignment="Top" 
+                        	HorizontalContentAlignment="Center" VerticalContentAlignment="Top"
+                        	Width="23" Height="23" Padding="0" Click="btn_contentTmplAdd_Click"/>
+                        <Button x:Name="btn_contentTmplRemove"  Content="Remove" 
+                        	HorizontalAlignment="Right" Margin="5,0,0,3" VerticalAlignment="Bottom" 
+                        	HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                        	Width="auto" Height="23" Padding="0" Click="btn_contentTmplRemove_Click"/>
+
+                    </StackPanel>
+                </GroupBox>
+                <Label Content="Tmpl Path:" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Bottom"/>
+                <TextBox x:Name="tb_docPath" Text="E:\DocumentGenerator\ContentTemplate.docx" Margin="130,137,290,0" VerticalContentAlignment="Center" Height="23" VerticalAlignment="Top"/>
+                <Button x:Name="btn_selectDoc" Content="..." 
+                	HorizontalAlignment="Right" Margin="0,137,262,0" VerticalAlignment="Top" 
+                	HorizontalContentAlignment="Center" VerticalContentAlignment="Top"
+                	Width="23" Height="23" Padding="0"/>
+                <Button x:Name="btn_loadDocx" Content="LoadDocx" Width="auto" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,137,112,0" Height="23" Click="btn_loadDocx_Click"/>
+        </Grid>
+
+        <StatusBar Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </Grid>
+</Window>
