@@ -4,3 +4,9 @@ C:\Users\厅\documents\visual studio 2012\Projects\DocumentGenerator\Test\bin\De
 C:\Users\厅\documents\visual studio 2012\Projects\DocumentGenerator\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\厅\documents\visual studio 2012\Projects\DocumentGenerator\Test\obj\Debug\Test.exe
 C:\Users\厅\documents\visual studio 2012\Projects\DocumentGenerator\Test\obj\Debug\Test.pdb
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\bin\Debug\Test.exe.config
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\bin\Debug\Test.exe
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\bin\Debug\Test.pdb
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\obj\Debug\Test.exe
+C:\Users\厅\Source\Repos\DocumentGenerator\DocumentGenerator\Test\obj\Debug\Test.pdb
